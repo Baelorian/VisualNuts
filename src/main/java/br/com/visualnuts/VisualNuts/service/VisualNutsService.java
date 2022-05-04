@@ -7,6 +7,6 @@ public interface VisualNutsService {
 
     boolean authenticate(String token);
     String[] exercise1();
-    void exercise2(World world);
+    String exercise2(World[] world);
 
     }

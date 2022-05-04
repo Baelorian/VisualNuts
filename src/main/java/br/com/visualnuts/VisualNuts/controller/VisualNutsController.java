@@ -32,11 +32,10 @@ public class VisualNutsController {
     @PostMapping(path = "/E2")
     @Cacheable("e2")
     public ResponseEntity Exercise2 (@RequestHeader(value = "authorization") String token,
-                                     @RequestBody World world){
+                                     @RequestBody World[] world){
         visualNutsService.authenticate(token);
-        visualNutsService.exercise2(world);
-        System.out.println(world.toString());
-    return ResponseEntity.status(HttpStatus.OK).body("OK");
+        String returnBody = visualNutsService.exercise2(world);
+        return ResponseEntity.status(HttpStatus.OK).body(returnBody);
     }
 
 }

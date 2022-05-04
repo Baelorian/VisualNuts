@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class World {
-    String country;
-    String[] languages;
+    private String country;
+    private String[] languages;
 }
